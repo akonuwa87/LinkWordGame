@@ -90,7 +90,7 @@ function revealWord(wordIndex, row) {
 }
 
 function revealNextWordFirstLetter() {
-    if (correctWordsGuessed < height) {
+    if (correctWordsGuessed < height - 2) { // -2 because first and last words are already revealed
         let tile = document.getElementById(currentRow + "-0");
         tile.value = currentPhrase[currentRow][0];
         tile.classList.add("revealed");
@@ -118,13 +118,14 @@ function checkWord(row) {
         correctWordsGuessed++;
         currentRow++;
 
-        // Show hint only if the word was guessed correctly on the first try
+        // Show hint button only if the word was guessed correctly on the first try
         if (firstAttempt) {
             showHintButton();
         }
 
         if (correctWordsGuessed === 4) {
             gameover = true;
+            revealPuzzle();
             document.getElementById("answer").innerHTML = "Congratulations! You won!<br>The complete phrase was: " + currentPhrase.join(", ");
         } else {
             revealNextWordFirstLetter();
@@ -145,9 +146,9 @@ function checkWord(row) {
 }
 
 function giveHint() {
-    if (hintButtonActive && !gameover && currentRow < height) {
+    if (hintButtonActive && !gameover && currentRow < height - 1) {
         let word = currentPhrase[currentRow];
-        for (let c = 0; c < word.length; c++) {
+        for (let c = 1; c < word.length; c++) { // Start from 1 because the first letter is already revealed
             let tile = document.getElementById(currentRow + "-" + c);
             if (tile.value === "") {
                 tile.value = word[c];
@@ -176,6 +177,7 @@ function updateErrorCounter() {
 function giveUp() {
     gameover = true;
     revealPuzzle();
+    document.getElementById("answer").innerHTML = "You gave up.<br>The complete phrase was: " + currentPhrase.join(", ");
     updateButtons();
 }
 
@@ -187,6 +189,10 @@ function tryAgain() {
     hintUsed = false;
     firstAttempt = true;
     incorrectAttempts = 0; // Reset errors
+    
+    // Clear the answer display
+    document.getElementById("answer").innerHTML = "";
+    
     initialize();
 }
 
@@ -205,4 +211,14 @@ function updateButtons() {
     document.getElementById("giveUpBtn").style.display = gameover ? "none" : "inline-block";
     document.getElementById("giveHintBtn").style.display = hintButtonActive && !gameover ? "inline-block" : "none";
     document.getElementById("tryAgainBtn").style.display = gameover ? "inline-block" : "none";
+}
+
+function showHintButton() {
+    hintButtonActive = true;
+    updateButtons();
+}
+
+function hideHintButton() {
+    hintButtonActive = false;
+    updateButtons();
 }
