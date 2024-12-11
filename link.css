@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#title {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#board {
+    width: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+}
+
+.tile {
+    border: 2px solid lightgray;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.tile:focus {
+    outline: none;
+    border-color: #006BFF;
+}
+
+.correct {
+    background-color: #006BFF;
+    color: white;
+    border-color: white;
+}
+
+.present {
+    background-color: #FF9400;
+    color: white;
+    border-color: white;
+}
+
+.absent {
+    background-color: #787c7e;
+    color: white;
+    border-color: white;
+}
+
+.revealed {
+    background-color: #006BFF;
+    color: white;
+    border-color: white;
+}
+
+button {
+    background-color: white;
+    border: 2px solid #006BFF;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: #006BFF;
+    color: white;
+}
+
+.blue-button {
+    background-color: #006BFF;
+    border-color: #006BFF;
+    color: white;
+}
+
+.blue-button:hover {
+    background-color: #006BFF;
+    border-color: #006BFF;
+}
+
+#giveHintBtn, #tryAgainBtn {
+    display: none;
+}
+
+/* Highlight for correct letters guessed */
+.correct-letter-orange {
+    background-color: #FF9400;  /* Orange for correct letters */
+    color: white;
+    border-color: white;
+}
+
+/* Highlight for full word guessed correctly */
+.full-word-correct {
+    background-color: #006BFF;  /* Blue for full word */
+    color: white;
+    border-color: white;
+}
+
+/* Highlight for incorrect guesses revealing correct letters */
+.incorrect-letter {
+    background-color: grey;  /* Grey for revealed letters after incorrect guesses */
+    color: white;
+    border-color: white;
+}
+
+/* Hint letter styling */
+.hint-letter-blue {
+    background-color: #006BFF;  /* Blue background for hint letter */
+    color: white;
+    border-color: white;
+}
+
+
+
