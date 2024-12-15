@@ -192,7 +192,7 @@ function updateErrorCounter() {
 function giveUp() {
     gameover = true;
     revealPuzzle();
-    document.getElementById("answer").innerHTML = "You gave up.<br>The complete phrase was: " + currentPhrase.join(", ");
+    document.getElementById("answer").innerHTML = "Better luck next time!<br>The complete link was: " + currentPhrase.join(", ");
     updateButtons();
 } 
 
