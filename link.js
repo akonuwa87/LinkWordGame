@@ -126,7 +126,7 @@ function checkWord(row) {
         if (correctWordsGuessed === 4) {
             gameover = true;
             revealPuzzle();
-            document.getElementById("answer").innerHTML = "Congratulations! You won!<br>The complete phrase was: " + currentPhrase.join(", ");
+            document.getElementById("answer").innerHTML = "Congratulations! You won!<br>The complete link was: " + currentPhrase.join(", ");
         } else {
             revealNextWordFirstLetter();
         }
@@ -139,7 +139,7 @@ function checkWord(row) {
         if (incorrectAttempts >= 6) {
             gameover = true;
             revealPuzzle();
-            document.getElementById("answer").innerHTML = "Game Over! You've made too many errors.<br>The complete phrase was: " + currentPhrase.join(", ");
+            document.getElementById("answer").innerHTML = "Game Over! You've made too many errors.<br>The complete link was: " + currentPhrase.join(", ");
         }
     }
     updateButtons();
@@ -179,7 +179,7 @@ function giveUp() {
     revealPuzzle();
     document.getElementById("answer").innerHTML = "You gave up.<br>The complete phrase was: " + currentPhrase.join(", ");
     updateButtons();
-}
+} 
 
 function tryAgain() {
     gameover = false;
