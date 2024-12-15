@@ -3,7 +3,22 @@ const phrases = [
     ["BOOK", "WORM", "HOLE", "PUNCH", "LINE", "DANCE"],
     ["RAIN", "BOW", "TIE", "DYE", "CAST", "IRON"],
     ["FIRE", "WORK", "SHOP", "LIFT", "OFF", "BEAT"],
-    // Add more phrases...
+    ["SNOW", "BALL", "PARK", "BENCH", "PRESS", "RELEASE"],
+    ["FOOT", "PRINT", "SCREEN", "PLAY", "GROUND", "ZERO"],
+    ["EYE", "LASH", "BACK", "PACK", "RAT", "RACE"],
+    ["HEART", "BEAT", "BOX", "SPRING", "BOARD", "GAME"],
+    ["TREE", "HOUSE", "BOAT", "RACE", "TRACK", "RECORD"],
+    ["ROCK", "STAR", "FISH", "TANK", "TOP", "HAT"],
+    ["BLUE", "BIRD", "HOUSE", "GUEST", "BOOK", "MARK"],
+    ["TOOTH", "PICK", "AXE", "HANDLE", "BAR", "STOOL"],
+    ["DOOR", "BELL", "HOP", "SCOTCH", "TAPE", "WORM"],
+    ["CANDLE", "STICK", "FIGURE", "EIGHT", "BALL", "ROOM"],
+    ["FLASH", "LIGHT", "YEAR", "BOOK", "SHELF", "LIFE"],
+    ["PEPPER", "MINT", "CONDITION", "REPORT", "CARD", "SHARK"],
+    ["MATCH", "BOX", "OFFICE", "CHAIR", "LIFT", "GATE"],
+    ["BUTTER", "FLY", "BALL", "POINT", "BLANK", "SLATE"],
+    ["BLUE", "BIRD", "HOUSE", "GUEST", "BOOK", "MARK"],
+    ["HEART", "BEAT", "BOX", "SPRING", "BOARD", "WALK"]
 ];
 
 let currentPhrase;
